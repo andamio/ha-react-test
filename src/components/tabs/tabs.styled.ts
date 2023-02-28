@@ -1,4 +1,4 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@reach/tabs';
+import { Tab, TabList, Tabs } from '@reach/tabs';
 import styled from 'styled-components';
 import { theme } from '../../theme';
 

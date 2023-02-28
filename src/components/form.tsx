@@ -42,24 +42,24 @@ export const MyForm: FC = () => {
   return (
     <form onSubmit={handleSubmit}>
       {errorMessage && (
-        <Text textColor="buttonRed" role="alert">
+        <Text textColor='buttonRed' role='alert'>
           {errorMessage}
         </Text>
       )}
       <div>
-        <Text as="label" htmlFor="emailField">
+        <Text as='label' htmlFor='emailField'>
           Your email
         </Text>
         :{' '}
-        <input id="emailField" type="email" ref={textInputEmailRef} required />
+        <input id='emailField' type='email' ref={textInputEmailRef} required />
       </div>
       <div>
-        <Text as="label" htmlFor="phoneField">
+        <Text as='label' htmlFor='phoneField'>
           Your phone number
         </Text>
-        : <input id="phoneField" type="tel" ref={textInputPhoneRef} required />
+        : <input id='phoneField' type='tel' ref={textInputPhoneRef} required />
       </div>
-      <SimpleButton type="submit">Submit</SimpleButton>
+      <SimpleButton type='submit'>Submit</SimpleButton>
     </form>
   );
 };

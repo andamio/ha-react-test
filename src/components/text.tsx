@@ -30,7 +30,7 @@ export const Text = styled.p<Props>`
   /*
     This approach is cleaner and less repetitive than accessing the props inline which would look like:
     color: ${(props) =>
-      theme.colors[props.textColor || 'bodyTextColor']}; and so on...
+    theme.colors[props.textColor || 'bodyTextColor']}; and so on...
   */
   ${getThemeProperties}
 `;

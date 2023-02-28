@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 import { useIsMounted } from '../utils/common-hooks';
 import { Text } from './text';
 

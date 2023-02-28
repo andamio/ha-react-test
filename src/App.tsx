@@ -28,7 +28,7 @@ function App() {
         Navigate to tab 2!
       </SimpleButton>
 
-      <Text textColor="purple" textSize="medium" textWeight="bold">
+      <Text textColor='purple' textSize='medium' textWeight='bold'>
         Hello I am some text
       </Text>
 
