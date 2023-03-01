@@ -2,13 +2,12 @@
 export const theme = {
   /** color, background-color, border-color */
   colors: {
-    blankedOutBackground: '#18181888',
-    standardBackground: 'white',
+    bodyBackground: '#333333',
+    sidebarBackground: '#888888',
     overlayBackground: '#18181888',
-    cancelText: 'red',
-    title: 'grey',
-    veryLightGrey: '#DFDFDF',
-    lightGrey: '#AAAAAA',
+    textLight: '#ffffff',
+    veryLightGrey: '#dfdfdf',
+    lightGrey: '#aaaaaa',
     purple: 'purple',
     buttonRed: 'red',
     buttonWhite: 'white',
@@ -21,6 +20,7 @@ export const theme = {
   },
   /** font-size */
   fontSizes: {
+    large: '32px',
     medium: '20px',
     default: '16px',
     small: '14px',
@@ -34,6 +34,7 @@ export const theme = {
   lineHeights: {},
   /** margin, margin-top, margin-right, margin-bottom, margin-left, padding, padding-top, padding-right, padding-bottom, padding-left, grid-gap, grid-column-gap, grid-row-gap */
   space: {
+    large: '24px',
     medium: '16px',
   },
   /** letter-spacing */
