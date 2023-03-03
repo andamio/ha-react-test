@@ -3,7 +3,7 @@ import { StyledTabs, StyledTab, StyledTabList } from './radix-tabs.styled';
 
 export const RadixTabs = () => {
   return (
-    <StyledTabs defaultValue='tab1' orientation='vertical'>
+    <StyledTabs defaultValue='tab1'>
       <StyledTabList aria-label='tabs example'>
         <StyledTab value='tab1'>One</StyledTab>
         <StyledTab value='tab2'>Two</StyledTab>

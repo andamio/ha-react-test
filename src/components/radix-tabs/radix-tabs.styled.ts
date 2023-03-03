@@ -30,7 +30,7 @@ export const StyledTab = styled(Tabs.Trigger)`
     background-color: ${theme.colors.overlayBackground};
   }
 
-  &[data-selected] {
-    border-bottom-color: ${theme.colors.buttonRed};
+  &[data-state="active"] {
+    color: ${theme.colors.buttonRed};
   }
 `;
