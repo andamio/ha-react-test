@@ -24,6 +24,11 @@ interface Props {
    * Similar to our index prop above, this onChange function when passed in allows us to react to changes from within the tabs component on the outside
    */
   onChange?: (index: number) => void;
+
+  /**
+   * Override to allow us to return custom content within the TabPanels wrapper
+   */
+  panels?: ReactNode;
 }
 
 export const Tabs: FC<Props> = (props) => {
@@ -35,9 +40,13 @@ export const Tabs: FC<Props> = (props) => {
         ))}
       </StyledTabList>
       <TabPanels>
-        {props.items.map((tab) => (
-          <TabPanel key={tab.title}>{tab.content}</TabPanel>
-        ))}
+        {props.panels
+          ? // If the panels prop is being passed in, return them here
+            props.panels
+          : // Otherwise carry on iterating over our items
+            props.items.map((tab) => (
+              <TabPanel key={tab.title}>{tab.content}</TabPanel>
+            ))}
       </TabPanels>
     </StyledTabs>
   );

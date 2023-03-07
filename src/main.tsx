@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { RadixTabs } from './components/radix-tabs';
 import { Reset } from './reset';
+import { Daily } from './routes/daily';
+import { Hourly } from './routes/hourly';
 import { Root } from './routes/root';
+import { Settings } from './routes/settings';
 
 const router = createBrowserRouter([
   {
@@ -12,15 +14,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <RadixTabs />,
+        element: <Daily />,
       },
       {
         path: '/hourly',
-        element: <>hourly</>,
+        element: <Hourly />,
       },
       {
         path: '/settings',
-        element: <>settings</>,
+        element: <Settings />,
       },
     ],
   },
