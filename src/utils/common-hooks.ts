@@ -1,6 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { fetchWeather, FetchWeatherParams } from '../api/weather';
-import { WeatherData } from '../types/weather';
 
 export function useIsMounted() {
   const isMounted = useRef(false);
@@ -17,17 +17,9 @@ export function useIsMounted() {
 }
 
 export function useWeatherData(params: FetchWeatherParams) {
-  const [data, setData] = useState<WeatherData>();
-
-  useEffect(() => {
-    fetchWeather(params)
-      .then((res) => {
-        setData(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [params]);
-
-  return { data };
+  return useQuery({
+    // Our queryKey includes all the options we expect to change that uniquely describe the data that is returned from our queryFn
+    queryKey: ['weatherData', params.location, params.date, params.include],
+    queryFn: () => fetchWeather(params),
+  });
 }
