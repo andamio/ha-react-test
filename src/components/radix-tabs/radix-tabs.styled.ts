@@ -27,10 +27,11 @@ export const StyledTab = styled(Tabs.Trigger)`
   cursor: pointer;
 
   &:focus-visible {
+    outline: 1px solid ${theme.colors.lightGrey};
     background-color: ${theme.colors.overlayBackground};
   }
 
   &[data-state="active"] {
-    color: ${theme.colors.buttonRed};
+    background-color: ${theme.colors.overlayBackground};
   }
 `;
