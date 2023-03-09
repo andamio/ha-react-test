@@ -46,6 +46,7 @@ export const SimpleButton = styled.button<Props>`
   font-family: ${theme.fonts.body};
   border: 1px solid ${theme.colors.buttonRed};
   transition: 0.25s ease-in-out;
+  cursor: pointer;
 
   /* With styled-components we can "nest" selectors similar to Sass and other CSS preprocessors, in this case the "&" represents the parent selector which is our button element */
   &:hover {

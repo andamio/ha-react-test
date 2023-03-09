@@ -8,6 +8,7 @@ import { Root } from './routes/root';
 import { Settings } from './routes/settings';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { MemoExample } from './components/memo-example';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Daily />,
+        element: <MemoExample />,
       },
       {
         path: '/hourly',

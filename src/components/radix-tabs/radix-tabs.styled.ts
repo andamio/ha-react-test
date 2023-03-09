@@ -31,7 +31,7 @@ export const StyledTab = styled(Tabs.Trigger)`
     background-color: ${theme.colors.overlayBackground};
   }
 
-  &[data-state="active"] {
+  &[data-state='active'] {
     background-color: ${theme.colors.overlayBackground};
   }
 `;

@@ -7,7 +7,7 @@ export const LayoutWrapper = styled.div`
   background-color: ${theme.colors.bodyBackground};
   min-height: 100vh;
   color: ${theme.colors.textLight};
-  font-family: ${theme.fonts.body}
+  font-family: ${theme.fonts.body};
 `;
 
 // We can use the css export from styled-components to pass in common blocks of styles to our styled components
