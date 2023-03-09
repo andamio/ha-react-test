@@ -9,6 +9,7 @@ const getNumber = () => {
 const runHeavyCalc = (data: number, type: 'memoised' | 'non-memoised') => {
   if (!data) return;
   const t0 = performance.now();
+  /*
   let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let str = '';
   let count = 0;
@@ -21,6 +22,8 @@ const runHeavyCalc = (data: number, type: 'memoised' | 'non-memoised') => {
     count = count + 1;
   });
   const result = count;
+  */
+  const result = Math.floor(Math.random() * 99999) + 1;
   const t1 = performance.now();
   console.log(`[${type}] ${t1 - t0} milliseconds`);
   return result;
