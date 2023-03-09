@@ -49,6 +49,10 @@ export const MemoExample = () => {
         useMemo allows you to memoize expensive functions so that you can avoid
         calling them on every render.
       </p>
+
+      <p>
+        This demonstration creates a random number using a heavy, slow function.
+      </p>
       <ResultBox>
         Non-memoised result: {result}
         <br />
