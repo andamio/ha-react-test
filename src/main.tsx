@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MemoExample />,
+        element: <Daily />,
       },
       {
         path: '/hourly',
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/settings',
         element: <Settings />,
+      },
+      {
+        path: '/usememo',
+        element: <MemoExample />,
       },
     ],
   },

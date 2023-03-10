@@ -4,10 +4,7 @@ import { MemoWrap, Note, ResultBox, TitleInput } from './memo-example.styled';
 
 // Create computationally expensive function:
 const fibonacci = (number: number | string): number => {
-  const t0 = performance.now();
   const num = typeof number === 'string' ? parseInt(number) : number;
-  const t1 = performance.now();
-  console.log(`Call to fibonacci took ${t1 - t0} milliseconds.`);
   return num === 2
     ? 1
     : num === 1
@@ -43,7 +40,7 @@ export const MemoExample = () => {
             e.target.value === '' ? 'useMemo Demonstration' : e.target.value
           );
         }}
-        placeholder='Add text to change the title'
+        placeholder="Add text to change the component's title"
       />
       {count > 20 && (
         <Note>

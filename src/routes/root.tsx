@@ -8,6 +8,7 @@ const tabItems = [
   { title: 'Daily', path: '/' },
   { title: 'Hourly', path: '/hourly' },
   { title: 'Settings', path: '/settings' },
+  { title: 'useMemo Example', path: '/usememo' },
 ];
 
 export const Root: FC = () => {
@@ -26,9 +27,6 @@ export const Root: FC = () => {
 
   return (
     <>
-      <Link to={`/`}>Daily</Link>
-      <Link to={`/hourly`}>Hourly</Link>
-      <Link to={`/settings`}>Settings</Link>
       <Layout
         // This is a placeholder for now, we'll pass in a real component later!
         sidebarContent='Sidebar content'
