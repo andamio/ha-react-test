@@ -26,3 +26,9 @@ export const TitleInput = styled.input`
   margin-top: ${theme.space.medium};
   padding: 8px;
 `;
+
+export const Note = styled.small`
+display: inline-flex;
+font-style: italic;
+margin: ${theme.space.medium} 0;
+`;

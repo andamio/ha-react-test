@@ -1,95 +1,56 @@
 import { useEffect, useMemo, useState, useRef } from 'react';
 import { SimpleButton } from '../simple-button';
-import { MemoWrap, ResultBox, TitleInput } from './memo-example.styled';
+import { MemoWrap, Note, ResultBox, TitleInput } from './memo-example.styled';
 
-const getNumber = () => {
-  // Imagine here an API call which returns a random number
-  return Math.random();
-};
-const runHeavyCalc = (data: number, type: 'memoised' | 'non-memoised') => {
-  if (!data) return;
+// Create computationally expensive function:
+const fibonacci = (number: number | string): number => {
   const t0 = performance.now();
-
-  let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let str = '';
-  let count = 0;
-  const length = Math.floor(data * 99999);
-  for (let i = 0; i < length; i++) {
-    str += ' ' + chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  let array = str.split(' ');
-  array.forEach(() => {
-    count = count + 1;
-  });
-  const result = count;
-
-  //const result = Math.floor(Math.random() * 99999) + 1;
+  const num = typeof number === 'string' ? parseInt(number) : number;
   const t1 = performance.now();
-  console.log(`[${type}] ${t1 - t0} milliseconds`);
-  return result;
+  console.log(`Call to fibonacci took ${t1 - t0} milliseconds.`);
+  return num === 2
+    ? 1
+    : num === 1
+    ? 0
+    : fibonacci(num - 1) + fibonacci(num - 2);
 };
 
 export const MemoExample = () => {
   const [count, setCount] = useState(1);
-  const [numberUpdateCount, setNumberUpdateCount] = useState(1);
-  const [number, setNumber] = useState(0);
   const [inputText, setInputText] = useState('useMemo Demonstration');
 
-  console.log(`App has been rendered ${count} times.`);
-  useEffect(() => {
-    const data = getNumber();
-    setNumber(data);
-  }, []);
-
-  const result = runHeavyCalc(number, 'non-memoised');
-  const resultMemo = useMemo(() => runHeavyCalc(number, 'memoised'), [number]);
+  const memoizedValue = useMemo(() => fibonacci(count), [count]);
 
   return (
     <MemoWrap>
       <h1>{inputText}</h1>
-
       <p>
         useMemo allows you to memoize expensive functions so that you can avoid
         calling them on every render.
       </p>
-
       <p>
-        This demonstration creates a random number using a heavy, slow function.
+        This demonstration creates the fibonacci number using a heavy, slow
+        function.
       </p>
-      <ResultBox>
-        Non-memoised result: {result}
-        <br />
-        The non-memoised function has been called {count} times
-      </ResultBox>
-      <ResultBox>
-        Memoised result: {resultMemo}
-        <br />
-        The memoised function has been called {numberUpdateCount} times
-      </ResultBox>
-      <SimpleButton
-        onClick={() => {
-          //const number = runHeavyCalc(Math.floor(Math.random() * 10) + 1, 'non-memoised') || 0;
-          const number = Math.floor(Math.random() * 10) + 1;
-          setNumber(number);
-          setNumberUpdateCount(numberUpdateCount + 1);
-          setCount(count + 1);
-        }}
-      >
-        Update number
-      </SimpleButton>
-      <SimpleButton onClick={() => setCount(count + 1)}>
-        Button Click
-      </SimpleButton>
+      <ResultBox>Fibonacci: {memoizedValue}</ResultBox>
+      <ResultBox>Count: {count}</ResultBox>
+      <SimpleButton onClick={() => setCount(count + 1)}>Increment</SimpleButton>
+
       <TitleInput
         type='text'
         onChange={(e) => {
           setInputText(
             e.target.value === '' ? 'useMemo Demonstration' : e.target.value
           );
-          setCount(count + 1);
         }}
         placeholder='Add text to change the title'
       />
+      {count > 20 && (
+        <Note>
+          Notice the performance of updating the title is still snappy and fast?
+          The fibonacci function isn't being called on every render.
+        </Note>
+      )}
     </MemoWrap>
   );
 };
