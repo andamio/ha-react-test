@@ -18,7 +18,7 @@ export const StyledTab = styled(Tab)`
   min-width: 100px;
   border-bottom: 4px solid transparent;
   text-align: center;
-  font-weight: ${theme.fontWeights.bold};
+  //font-weight: ${theme.fontWeights.bold};
   font-family: ${theme.fonts.body};
   font-size: ${theme.fontSizes.default};
 

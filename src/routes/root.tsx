@@ -8,7 +8,7 @@ const tabItems = [
   { title: 'Daily', path: '/' },
   { title: 'Hourly', path: '/hourly' },
   { title: 'Settings', path: '/settings' },
-  { title: 'useMemo Example', path: '/usememo' },
+  { title: 'useMemo Demonstration', path: '/usememo' },
 ];
 
 export const Root: FC = () => {
