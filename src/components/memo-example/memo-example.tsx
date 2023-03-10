@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useRef } from 'react';
+import { useMemo, useState } from 'react';
 import { SimpleButton } from '../simple-button';
 import { MemoWrap, Note, ResultBox, TitleInput } from './memo-example.styled';
 
